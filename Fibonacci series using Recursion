@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+unsigned long long fibonacci(unsigned int n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+void print_fibonacci_series(unsigned int n) {
+    printf("Fibonacci Series up to %u terms:\n", n);
+    for (unsigned int i = 0; i < n; i++) {
+        printf("%llu ", fibonacci(i));
+    }
+}
+
+int main() {
+    unsigned int n;
+
+    printf("Enter the number of terms: ");
+    scanf("%u", &n);
+
+    print_fibonacci_series(n);
+
+    return 0;
+}
